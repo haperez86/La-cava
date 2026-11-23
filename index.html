@@ -43,6 +43,42 @@
   .mobile-nav button{font-size:9px}
 }
 
+
+/* Corrección de desbordamiento y jerarquía en móviles */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+.app,.main,.content,.page,.card,.stats,.layout2{min-width:0;max-width:100%}
+@media(max-width:700px){
+  .app{width:100%;overflow-x:hidden}
+  .main{width:100%;min-width:0;overflow-x:hidden}
+  .topbar{width:100%;min-width:0;max-width:100%;padding:0 12px;gap:8px}
+  .topbar>div,.user{min-width:0;max-width:100%}
+  .user{display:flex;align-items:center;gap:7px}
+  .user>span{font-size:10px;white-space:nowrap}
+  .user select{max-width:112px;min-width:0;padding:7px 5px!important;font-size:11px!important}
+  .content{width:100%;max-width:100%;min-width:0;padding:18px 12px;overflow-x:hidden}
+  .page-head{width:100%;min-width:0}
+  .page-head h2{overflow-wrap:anywhere}
+  .page-head>.btn,.page-head button{width:100%;max-width:100%;min-width:0;white-space:normal}
+  .stats{display:grid;grid-template-columns:minmax(0,1fr);width:100%;gap:10px}
+  .stats>.card{width:100%;min-width:0;margin:0}
+  .card{min-width:0;max-width:100%;overflow-wrap:anywhere}
+  .layout2,.table-grid,.menu-grid,.kitchen-grid{min-width:0;max-width:100%}
+  .table-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .table-tile{min-width:0;max-width:100%}
+  .toolbar{width:100%;min-width:0}
+  .toolbar>*{min-width:0;max-width:100%}
+  .section-title>*{min-width:0;max-width:100%}
+  .mobile-nav{width:100%;max-width:100%;left:0;right:0}
+  .modal-back{width:100%;max-width:100%;overflow-x:hidden}
+  .modal{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
+  .modal input,.modal select,.modal textarea{max-width:100%;min-width:0}
+}
+@media(max-width:380px){
+  .content{padding-left:10px;padding-right:10px}
+  .table-grid{grid-template-columns:minmax(0,1fr)}
+  .user>span{display:none}
+}
+
 </style>
 </head>
 <body>
